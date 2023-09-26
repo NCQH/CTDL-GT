@@ -6,6 +6,7 @@ public class QuickFindUF {
         int[] id = new int[1000];
         int N = sc.nextInt();
         int count = N;
+        int step = 0;
 
         for (int i = 0; i < N; i++) id[i] = i;
         while (sc.hasNextInt()) {
@@ -13,15 +14,17 @@ public class QuickFindUF {
             int y = sc.nextInt();
             if (id[x] != id[y]) {
                 count--;
-                if (count == 1) {
-                    System.out.println(x + " " + y);
-                }
                 int temp = id[y];
                 for (int i = 0; i < N; i++) {
                     if (id[i] == temp) id[i] = id[x];
                 }
+                if (count == 1) {
+                    System.out.println(x + " " + y);
+                    break;
+                }
             }
         }
-        if (count > 0)
+
+        if (count > 1) { System.out.println("FALSE"); }
     }
 }

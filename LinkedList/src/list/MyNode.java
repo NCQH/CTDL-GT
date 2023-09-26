@@ -19,5 +19,6 @@ public class MyNode {
     public MyNode getNext() {
         return next;
     }
-    public void setNext(MyNode p) { this.next = p; }
+    public void setNext(MyNode node) { this.next = node; }
+    public void setData(String data) { this.data = data; }
 }
